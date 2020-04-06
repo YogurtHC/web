@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "blog_app.apps.BlogAppConfig",
     "comments_app.apps.CommentsAppConfig",
+    "pure_pagination",
 ]
 
 MIDDLEWARE = [
@@ -116,3 +117,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'blog_app/static'),
 )
+
+PAGINATION_SETTINGS = {
+    "PAGE_RANGE_DISPLAYED": 4,
+    "MARGIN_PAGES_DISPLAYED": 1,
+    "SHOW_FIRST_PAGE_WHEN_INVALID": True
+}

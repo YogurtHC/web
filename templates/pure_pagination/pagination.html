@@ -1,0 +1,35 @@
+<div class="text-center pagination" style="width: 100%">
+    <ul>
+        <li>
+        {% if page_obj.has_previous %}
+            <a href="?{{ page_obj.previous_page_number.querystring }}"
+               class="prev">&lsaquo;&lsaquo;</a>
+        {% else %}
+            <a href="javascript: void(0);"
+               class="prev">&lsaquo;&lsaquo;</a>
+        {% endif %}
+        </li>
+        {% for page in page_obj.pages %}
+            {% if page %}
+                {% ifequal page page_obj.number %}
+        <li class="current"><a href="javascript: void(0);">{{ page }}</a></li>
+                {% else %}
+        <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a></li>
+                {% endifequal %}
+            {% else %}
+        ・・・
+            {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+        <li>
+            <a href="?{{ page_obj.next_page_number.querystring }}" class="next">&rsaquo;&rsaquo;</a>
+        </li>
+        {% else %}
+        <li>
+            <a href="javascript: void(0);" class="next">&rsaquo;&rsaquo;</a>
+        </li>
+        {% endif %}
+
+    </ul>
+
+</div>
