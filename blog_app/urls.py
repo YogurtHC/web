@@ -16,6 +16,7 @@ Including another URLconf
 from django.urls import path
 from .views.post_detail import PostDetailView
 from .views.index import IndexView, CategoryView, ArchiveView, TagView
+from .views.search import search
 
 app_name = "blog_app"
 urlpatterns = [
@@ -24,4 +25,5 @@ urlpatterns = [
     path("category/<int:pk>", CategoryView.as_view(), name="category"),
     path("tag/<int:pk>", TagView.as_view(), name="tag"),
     path("posts/<int:pk>/", PostDetailView.as_view(), name="post_detail"),
+    path("search/", search, name="search"),
 ]
