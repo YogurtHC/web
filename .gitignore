@@ -1,7 +1,10 @@
 .idea
+collected_static/
+migrations/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
+tests/
 *.py[cod]
 *$py.class
 

@@ -43,6 +43,8 @@ class Post(models.Model):
 
     author = models.ForeignKey(User, verbose_name="作者", on_delete=models.CASCADE)
 
+    views = models.PositiveIntegerField(default=0, editable=False)
+
     class Meta:
         verbose_name = "文章"
         verbose_name_plural = verbose_name
@@ -50,6 +52,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def increase_views(self):
+        self.views += 1
+        self.save(update_fields=["views"])
 
     def save(self, *args, **kwargs):
         self.updated_time = timezone.now()

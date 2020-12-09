@@ -13,19 +13,11 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'dvkjakuurcxyxve&_d2e49xz=&5g*19twlos_=s+5ma9isg0(j'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -39,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "blog_app.apps.BlogAppConfig",
     "comments_app.apps.CommentsAppConfig",
+    "pure_pagination",
 ]
 
 MIDDLEWARE = [
@@ -56,8 +49,7 @@ ROOT_URLCONF = 'web.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,6 +113,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'blog_app/static'),
 )
+
+PAGINATION_SETTINGS = {
+    "PAGE_RANGE_DISPLAYED": 4,
+    "MARGIN_PAGES_DISPLAYED": 1,
+    "SHOW_FIRST_PAGE_WHEN_INVALID": True
+}

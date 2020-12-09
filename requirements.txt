@@ -1,5 +1,11 @@
 certifi==2019.11.28
+django-pure-pagination==0.3.0
+Faker==4.0.2
+gunicorn==20.0.4
 Django==2.2.13
 Markdown==3.2
+python-dateutil==2.8.1
 pytz==2019.3
+six==1.14.0
 sqlparse==0.3.0
+text-unidecode==1.3
