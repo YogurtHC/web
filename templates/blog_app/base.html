@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>十方微尘</title>
+    <title>狗子的世界</title>
 
     <!-- meta -->
     <meta charset="UTF-8">
@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/pace.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="shortcut icon" href="{%static "img/favicon.ico" %}" />
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.15.8/styles/github.min.css">
-
     <!-- js -->
     <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -65,11 +65,11 @@
 {% endif %}
 <body>
 <div class="container">
-    <header id="site-header">
+    <header id="site-header" style="background-image: url({% static 'img/title_bg.png' %})">
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    <h1><a href="{% url 'blog_app:index' %}"><b>十方微尘</b></a></h1>
+                    <h1><a href="{% url 'blog_app:index' %}"><b>狗子的世界</b></a></h1>
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
@@ -82,10 +82,18 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="cl-effect-11"><a href="{% url 'blog_app:index' %}" data-hover="首页">首页</a></li>
-                            <li class="cl-effect-11"><a href="#" data-hover="博客">博客</a></li>
-                            <li class="cl-effect-11"><a href="#" data-hover="关于">关于</a></li>
-                            <li class="cl-effect-11"><a href="#" data-hover="联系">联系</a></li>
+                            <li class="cl-effect-11">
+                                <a href="{% url 'blog_app:index' %}" data-hover="首页">首页</a>
+                            </li>
+                            <li class="cl-effect-11">
+                                <a href="{% url 'blog_app:blogs' %}" data-hover="博客">博客</a>
+                            </li>
+                            <li class="cl-effect-11">
+                                <a href="{% url 'blog_app:about' %}" data-hover="关于">关于</a>
+                            </li>
+                            <li class="cl-effect-11">
+                                <a href="#" data-hover="联系">联系</a>
+                            </li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>

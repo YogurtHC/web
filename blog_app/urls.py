@@ -15,12 +15,17 @@ Including another URLconf
 """
 from django.urls import path
 from .views.post_detail import PostDetailView
-from .views.index import IndexView, CategoryView, ArchiveView, TagView
+from .views.index import IndexView
+from .views.blogs import BlogsView, CategoryView, ArchiveView, TagView
+from .views.about import AboutView
 from .views.search import search
 
 app_name = "blog_app"
 urlpatterns = [
     path("", IndexView.as_view(), name="index"),
+    path("blogs", BlogsView.as_view(), name="blogs"),
+    path("about", AboutView.as_view(), name="about"),
+
     path("archives/<int:year>/<int:month>", ArchiveView.as_view(), name="archive"),
     path("category/<int:pk>", CategoryView.as_view(), name="category"),
     path("tag/<int:pk>", TagView.as_view(), name="tag"),
