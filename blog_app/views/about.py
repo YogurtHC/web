@@ -9,6 +9,5 @@ from ..models import Post, Tag, Category
 class AboutView(PaginationMixin, ListView):
     model = Post
     template_name = "blog_app/about.html"
-    context_object_name = "post_list"
 
     paginate_by = 10

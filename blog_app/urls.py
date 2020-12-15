@@ -18,6 +18,7 @@ from .views.post_detail import PostDetailView
 from .views.index import IndexView
 from .views.blogs import BlogsView, CategoryView, ArchiveView, TagView
 from .views.about import AboutView
+from .views.contact import ContactView
 from .views.search import search
 
 app_name = "blog_app"
@@ -25,6 +26,7 @@ urlpatterns = [
     path("", IndexView.as_view(), name="index"),
     path("blogs", BlogsView.as_view(), name="blogs"),
     path("about", AboutView.as_view(), name="about"),
+    path("contract", ContactView.as_view(), name="contract"),
 
     path("archives/<int:year>/<int:month>", ArchiveView.as_view(), name="archive"),
     path("category/<int:pk>", CategoryView.as_view(), name="category"),

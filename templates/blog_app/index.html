@@ -2,7 +2,7 @@
 {% load blog_extras %}
 {% load static %}
 {% block main %}
-    <div class="container">
-        <img src ="{% static 'img/about.png' %}">
+    <div class="container" >
+        <a href="{% url 'blog_app:blogs' %}"><img src ="{% static 'img/under_construction.png' %}"></a>
     </div>
 {% endblock %}
